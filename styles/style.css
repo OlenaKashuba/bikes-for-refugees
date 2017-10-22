@@ -29,15 +29,6 @@ body {
 	margin-right: 2rem;
 }
 
-.main-nav li {
-	margin-right: 2.5rem;
-	text-transform: uppercase;
-}
-
-.main-nav li:last-child {
-	margin-right: 0;
-}
-
 .main-nav a {
 	text-decoration: none;
 	color: #000;
@@ -69,20 +60,29 @@ body {
 
 .main-nav .nav-menu {
 	position: absolute;
-	top: 44;
-	left: -56;	
+	top: 57;
+	left: -26;	
 	display: none;
 	flex-direction: column;
+	white-space: nowrap;
+	justify-content: space-between;
+	align-items: center;
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 	color: #000000;
-	background-color: #ffffff;
+	background-color: (225,119,75,0.8);
 	border: 1px solid #000000;
 }
 
 .main-nav:hover .nav-menu {
 	display: flex;
+}
+
+.main-nav .nav-menu li {
+	margin-right: 0;
+	align-self: center;
+	text-transform: uppercase;
 }
 
 .btn {
@@ -120,7 +120,6 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	margin: 0 auto;
-	width: 50%;
 	margin-top: 4rem;
 }
 
@@ -397,21 +396,49 @@ body {
 	background: #dddddd;	
 }
 
-@media screen and (min-width: 520px) {
-	.main-header .btn-donate {
-		width: 70%;
+@media screen and (min-width: 351px) {
+	.main-header {
+		flex-wrap: wrap;
 	}
 
-	.main-header .main-logo {
-		width: 40%;
+	.main-header .btn-donate {
+		width: 60%;
 	}
+
 }
 
 
 @media screen and (min-width: 576px) {
+
+	.main-header {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
 	.main-promo h1 {
 		font-size: 3rem;
 	}
+
+	.main-nav .nav-menu {
+		position: absolute;
+		top: 57px;
+		left: 51px;
+	}
+
+	.main-header .btn-donate {
+		margin-top: 0;
+		align-self: center;
+		width: 20%;
+	}
+
+	.main-logo {
+		width: 20%;
+	}
+
+	.dropoff-button {
+		margin-left: 5rem;
+	}
+
+
 }
 
 @media screen and (min-width: 768px) {
@@ -429,6 +456,11 @@ body {
 	.main-promo .btn-donate {
 		margin-right: 0.5rem;
 	}
+
+	.main-logo {
+		width: 20%;
+	}
+
 }
 
 @media screen and (min-width: 992px) {
@@ -455,17 +487,33 @@ body {
 	.main-nav .nav-menu {
 		display: flex;
 		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
 		border: none;
 		position: static;
+	}
+
+	.main-nav .nav-menu li {
+		margin-right: 2.5rem;
+	}
+
+	.main-nav .nav-menu li:last-child {
+		margin-right: 0;
 	}
 
 	.main-promo h1 {
 		font-size: 4rem;
 	}
+
+	.nav-menu li {
+		align-self: stretch;
+	}
+
 	.main-flex {
 		display: flex;
 		justify-content: space-between;
 	}
+
 	.main-logo {
 		width: 20%;
 	}
